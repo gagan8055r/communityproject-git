@@ -1,0 +1,594 @@
+// console.log("hello world");
+
+// /////////////////REPL//////////
+
+// var t=0;
+
+//  do
+// ... {t++;
+// ... console.log(`the value of t is ${t}`)
+// ... }while(t<5);
+// the value of t is 1
+// the value of t is 2
+// the value of t is 3
+// the value of t is 4
+// the value of t is 5
+// > 5+8
+// 13       underscore: to get previous value
+// > _
+// 13
+// >        press two times tab button 
+
+
+// // // // //////////////Node Js modules is  same as js libraries 
+          
+// // // //                 ////////////////////FS///////////////////////
+// // // // // fs.writeFileSync(name of the file ,contents to be added in the file)
+// // // // // fs.appendFileSync(name of the file ,contents to be added in the file without deleting the contents already present in the file)
+
+
+// // // // // buffer data is obtained while we are fetching the data from a file we want (not available in browser js) are receiving from the network 
+
+// // // // // so to convert into original data we use toString function 
+
+// // // // // const { log } = require('console');
+
+// // // // // to rename the file we use fs.renameSync(old path,new path)
+// // // // // fs.writeFileSync('read.txt',"welcome to youtube channel");
+// // // // // fs.writeFileSync('read.txt',"welcome to youtube channel 3");
+
+// // // // // fs.appendFileSync('read.txt',"hello world")
+// // // // // const data=fs.readFileSync('read.txt')
+// // // // // console.log(data);
+
+// // // // // const org_data=data.toString()    
+// // // // // console.log(org_data);
+
+// // // // // fs.renameSync('read.txt','readwrite.txt')
+
+// // // // ///////////////////////CROD OP IN FS//////////////////////
+
+
+
+// // // // // to create a directory //////
+
+// // // // // fs.mkdirSync("new folder")
+// // // // // fs.writeFileSync('read.txt','welocome to my channel')
+// // // // // const data =  fs.readFileSync('read.txt','utf8')
+// // // // // console.log(data);
+
+// // // // // to delete file //
+
+// // // // // fs.unlinkSync('read.txt')
+// // // // // fs.unlinkSync('readwrite.txt')
+// // // // // fs.mkdirSync("old folder")
+// // // // // fs.rmdirSync("new folder")
+// // // // ///////////////////////////////////ASYNCHRONOUS ////////////
+
+// // // // // fs.writeFile('readwrite.txt','tyhjjhgfghjklhgfghj',(err)=>{
+// // // //     // console.log('files successfully created');
+// // // //     // })
+// // // //     // fs.writeFile('readwrite.txt','today is a awesome day ',(err)=>{
+// // // //         // console.log('files successfully created');
+// // // //         // })
+        
+// // // //         // fs.readFile('read.txt')
+// // // //         // fs.readFile('readwrite.txt',(err,data)=>{
+// // // //             //     console.log(data);
+// // // //             // })
+// // // //             // fs.readFile('readwrite.txt','utf8',(err,data)=>{
+// // // //                 //     console.log(data);
+// // // //                 // })
+                
+                
+// // // //                 // const data=fs.readFileSync('readwrite.txt','utf8')
+// // // //                 // console.log(data);
+// // // //                 // console.log("after data");
+// // // //                 // const fs = require('fs');
+                
+// // // //                 // fs.readFile('readwrite.txt','utf8',(err,data)=>{
+// // // //                 //     console.log(data);
+// // // //                 // })
+// // // //                 // console.log("after that data");
+
+// // // //                 /////////////////////////////////////OS MODULE//////
+
+// // // //                 // const packageName = require('packageName');
+// // // //             //     const os = require('os');
+// // // //             //     console.log(os.arch());
+// // // //             //    const freememo= os.freemem();
+// // // //             //    console.log(`${freememo/1024/1024/1024}`);
+
+// // // //                //////////////PATH MODULE/////////////////////////////////
+// // // //             //    const path = require('path');
+// // // //             //    console.log(path.dirname("C:\Users\GAGAN_R\Desktop\nodejs\module.js"));
+// // // //             //    console.log(path.extname("C:\Users\GAGAN_R\Desktop\nodejs\module.js"));
+// // // //             //    console.log(path.basename("C:\Users\GAGAN_R\Desktop\nodejs\module.js"));
+// // // //             //    console.log(path.parse("C:\Users\GAGAN_R\Desktop\nodejs\module.js"));
+
+// // // //             //    parse will let us to know all dir,ext,base,rootname everything
+
+
+
+// // // //             // creating our own module   ////
+
+
+// // // // //             const add=(a,b)=>{
+// // // // //                 return a+b;
+// // // // //             }
+// // // // //             const sub=(a,b)=>{
+// // // // //                 return a-b;
+// // // // //             }
+// // // // // // const name='vinay' if more than one file to be accessed 
+// // // // //             module.exports.add=add;
+// // // // //             module.exports.sub=sub;
+// // // // //             module.exports={add,sub}
+
+// // // // //////////////////////////////////////NPM ///////////////////////////////////////
+
+// // // // // const chalk = require('chalk');
+// // // // // console.log(chalk.red.underline("hello"));
+// // // // // import chalk from 'chalk';
+
+// // // // // const log = console.log;
+// // // // // log(chalk.blue('Hello', 'World!', 'Foo', 'bar', 'biz', 'baz'));
+
+// // // // /////////////////Nodemom is globaL MODULE///////////////////////
+
+// // // // // console.log("edfjkfdh");
+
+// // // // ////////////////////////////////Module Wrapper function(Nodejs) IIFE(JS) ///////////////
+// // // // //    (function(){
+// // // // //  const a ="gagan"
+// // // // // console.log(a)   ///////it will wrap inside it and make private and require,exports are use as parameters and make our code less lines and efficient
+// // // // // })
+// // // // // console.log(__dirname);
+// // // // // console.log(__filename);
+
+// // // // ///////////////////////////////Node js web server////////////////////////////////////////////////////////////////////
+
+// // // // const http = require('http');
+// // // // const fs = require('fs');
+// // // // const server=http.createServer((req,res)=>{
+// // // //    if(req.url=="/")
+// // // //    {
+   
+// // // //     res.end("hello from other sides");
+// // // // }
+// // // //   else if(req.url=="/home")
+// // // //   {
+   
+// // // //     res.end("hello from other home sides");
+// // // // }
+// // // //   else if(req.url=="/about")
+// // // //   {
+   
+// // // //     res.end("hello from other about sides");
+// // // // }
+// // // //   else if(req.url=="/userapi")
+// // // //   {
+// // // //    fs.readFile(`${__dirname}/json1.json`,'utf8',(err,data)=>{
+// // // // console.log(data);
+// // // // // res.end("hello from other userapi sides");
+// // // // res.end(data);
+// // // // })
+// // // // }
+// // // //   else 
+// // // //   {
+// // // //    res.writeHead(404,{"Content-type":"text/html" })
+// // // //     res.end("<h1>ERROR 404 not found</h1>");
+// // // // }
+
+// // // // })
+// // // // // ///////////////////by writing res.writehead(404) in status code of network bar we get to see 404 code in that /////////
+// // // // // ////////////////////////status code 200 is correct information 
+// // // // server.listen(8000,"127.0.0.1",()=>{
+// // // //     console.log("listening in the port number 8000....");
+// // // // })
+
+
+
+// // // // ////////////////////////////////////JSON(javascript object notation)////////////////////
+
+// // // // ///Json is a lightweight format to store and transport data from web server to web page./////
+
+// // // // // const fs = require('fs');
+// // // // // const bio_data={
+// // // // //     Name:"gagan",
+// // // // //     Age:23,
+// // // // //     Course:"BE",
+// // // // //     Branch:"ECE"
+// // // // // }
+// // // // // console.log(bio_data.Age);
+// // // // // console.log(bio_data);
+// // // // // to convert object form to JSON we use stringify and for viceversa we use parseFloat
+// // // // // const jsondata=JSON.stringify(bio_data);
+// // // // // console.log(jsondata.Age);  ////////////We cannot directly call json data as we do in ogject by using dot operator 
+// // // // // {"Name":"gagan","Age":23,"Course":"BE","Branch":"ECE"}
+// // // // // console.log(jsondata.);
+// // // // // console.log(JSON.parse());
+
+// // // // // fs.writeFile("json1.json",jsondata,(err)=>{
+// // // // // console.log("done");
+// // // // // })
+
+// // // // // fs.readFile("json1.json","utf-8",(err,data)=>{
+// // // // //     const orgData=JSON.parse(data)
+// // // // //     console.log(orgData);
+
+
+// // // // //     console.log("done");
+// // // // // // })
+// // // // /////////////////////////////Event module//////////////////////
+// // // // const EventEmitter= require('events');
+// // // // const event =new EventEmitter();
+
+// // // // event.on('caution',()=>{
+// // // //     console.log("Stop doing that 1");
+// // // // })
+// // // // event.on('caution',()=>{
+// // // //     console.log("Stop doing that 2");
+// // // // })
+// // // // event.on('caution',()=>{
+// // // //     console.log("Stop doing that 3");
+// // // // })
+// // // // event.on('caution',(stat,msg)=>{
+// // // //     console.log(`The status code is${stat} and message is ${msg}`);
+// // // // })
+
+// // // // event.emit('caution',200,'ok')
+
+// // // // is event module we can pass some parameters by emit and put it in the on statement 
+// // // ///////////by one emit we can call multiple callbacks
+
+
+// // // /////////////////////////////STREAMS IN NODEJS/////////////////////////////////
+// // // // Streams means it is a continuous fashion of readiong data from one file and writing it to the another file all are real time basis
+// // // // Four types 1.Readable - in read operation 2.Writable - In write operation 3.Duplex - Both 4.Transform -Output computed based on input  
+// // // // Eachtype of stream is event emitter 1.Data 2.end 3.error 4.finish
+
+
+// // // // const fs = require('fs');
+// // // // const http = require('http');
+
+// // // // // fs.renameSync("readwrite.txt","input.txt")
+
+// // // // const server=http.createServer();
+
+// // // // server.on('request',(req,res)=>{
+// // // // //     var fs = require('fs');
+
+// // // //     fs.readFile('input.txt',(err,data)=>{
+// // // //         if(err) return console.log(err);
+// // // //         const newdata=console.log(data.toString());
+// // // //         // res.end(newdata)
+// // // //     })
+
+// // // // const rstream=fs.createReadStream('input.txt')
+
+// // // // rstream.pipe(res)
+// // // // rstream.on('data',(chunkdata)=>{
+// // // //     res.write(chunkdata)
+// // // // })
+// // // // rstream.on('end',()=>{
+// // // //     res.end()
+// // // // })
+// // // // // rstream.on('error',(err)=>{
+// // // // //     console.log('err');
+// // // // //     res.end("file not found")
+// // // // // })
+// // // // })
+// // // // // server.emit('request');
+// // // // server.listen(8000,'127.0.0.1',()=>{
+// // // //     console.log('the server is listening in th eport number 8000....');
+// // // // })   
+
+// // // //////////////////////////////////////EXPRESS JS////////////////
+
+// // // // const express = require('express');
+// // // // const app=express();
+// // // // const port =8000
+
+// // // // app.get("/",(req,res)=>{
+// // // //     res.send("hello this is home page")
+// // // // })
+// // // // app.get("/about",(req,res)=>{
+// // // //     res.send("hello this is about page")
+// // // // })
+// // // // app.get("/services",(req,res)=>{
+// // // //     res.send("hello this is services page")
+// // // // })
+// // // // app.get("/contact",(req,res)=>{
+// // // //     res.send("<h1>hello this is contact page</h1>")
+// // // // })
+// // // // app.get("/temp",(req,res)=>{
+// // // //     res.status(200).send([
+// // // //         {
+// // // //         id:23,
+// // // //         place:'mysore'
+// // // //     },
+// // // //         {
+// // // //         id:23,
+// // // //         place:'mysore'
+// // // //     },
+// // // //         {
+// // // //         id:23,
+// // // //         place:'mysore'
+// // // //     },
+// // // //         {
+// // // //         id:23,
+// // // //         place:'mysore'
+// // // //     },
+// // // // ])
+   
+// // // // })
+
+// // // // app.listen(port,()=>{
+// // // //     console.log(`this is listening in the port number ${port}.......`);
+// // // // })
+
+// // // // res.json and res.send can be used to render but res.json can convert which is not in json to json but not res.send 
+// // // //////////////////////////////Middle ware////////////////
+// // // // const express = require('express');
+// // // // const app=express();
+// // // // const port =8000;
+
+
+
+// // // // app.get("/",(req,res)=>{
+// // // //     res.send("hello from home")
+// // // // })
+
+// // // // const express = require('express');
+// // // // const app=express();
+// // // // const port =8000;
+// // // // const path = require('path');
+
+
+
+// // // // const staticpath=console.log(path.join(__dirname,"public"));
+
+// // // // app.use(express.static(staticpath))
+// // // // app.get("/",(req,res)=>{
+// // // //     res.send("hello from home")
+// // // // })
+
+// // // // app.listen(port,()=>{
+// // // //     console.log(`this is listening in the port ${port}..... `);
+// // // // })
+
+// // // app.set("veiw engine","hbs")    
+// // // app.get("",(req,res)=>{
+// // //     res.render("index.hbs")
+// // // })
+// // // app.get("/",(req,res)=>{
+// // //     res.send("hello from home")
+// // //     // res.render("index")
+// // // })
+// // // app.listen(port,()=>{
+// // //     console.log(`this is listening in the port ${port}..... `);
+// // // })
+
+
+// // ///////////////////////MONGODB////////////////////////////////////
+// // // Formed in documnets       BSON binary representaton json mostly for transmission of data where as bson for storage
+
+// // // SQL (Table) Nosql(Collection)
+// // // (Row)  (Document)
+// // // (Column)  (Fields)  in document it is flexibility
+
+// // //// ////////To run always start from C:\mongosh-1.8.0-win32-x64\bin and then click mongosh and then enter and start your code
+// // /// Or go to cmd and type mongosh and then enter
+
+// // // test> show dbs
+// // // admin    40.00 KiB
+// // // config  108.00 KiB
+// // // local    40.00 KiB
+// // // test> use gagan  create database
+// // // switched to db gagan
+// // // gagan> show dbs
+// // // admin    40.00 KiB
+// // // config  108.00 KiB
+// // // local    40.00 KiB
+// // // gagan> db.gagandata.InsertOne({name:"gagan",age:21,type:"Full stack",active:"True"}) creating collections
+// // // TypeError: db.gagandata.InsertOne is not a function
+// // // gagan> db.gagandata.insertOne({name:"gagan",age:21,type:"Full stack",active:"True"})
+// // // {
+// // //   acknowledged: true,
+// // //   insertedId: ObjectId("64198544782942726cdeaa57")
+// // // }
+// // // gagan> show dbs
+// // // admin    40.00 KiB
+// // // config  108.00 KiB
+// // // gagan    40.00 KiB
+// // // local    40.00 KiB
+// // // gagan> db
+// // // gagan
+// // // gagan> db.gagandata.find()
+// // // [
+// // //   {
+// // //     _id: ObjectId("64198544782942726cdeaa57"),
+// // //     name: 'gagan',
+// // //     age: 21,
+// // //     type: 'Full stack',
+// // //     active: 'True'
+// // //   }
+// // // ]
+
+// //              ////////////////Read/////////////////
+// // // db.collection_name.find(query,projection)
+
+// // // gagan> db.gagandata.find({name:"React JS"},{name:1})
+// // // [ { _id: ObjectId("641b25d18224fbb42ab75557"), name: 'React JS' } ]
+// // // gagan> db.gagandata.find({name:"React JS"},{name:1}).pretty()
+// // // [ { _id: ObjectId("641b25d18224fbb42ab75557"), name: 'React JS' } ]
+// // // gagan> db.gagandata.find({name:"React JS"},{name:1,_id:0}).pretty()
+// // // [ { name: 'React JS' } ]
+
+
+// // ]
+// // gagan> db.gagandata.find({active:"true"}).pretty().limit(1)
+// // [
+// //   {
+// //     _id: ObjectId("641b25d18224fbb42ab75557"),
+// //     name: 'React JS',
+// //     type: 'Front End',
+// //     active: 'true',
+// //     resource: 'active'
+// //   }
+// // ]
+// // gagan> db.gagandata.findOne({active:"true"}).pretty()
+// // TypeError: db.gagandata. ... rue"}).pretty is not a function
+// // gagan> db.gagandata.findOne({active:"true"})
+// // {
+// //   _id: ObjectId("641b25d18224fbb42ab75557"),
+// //   name: 'React JS',
+// //   type: 'Front End',
+// //   active: 'true',
+// //   resource: 'active'
+// // }
+// // gagan> db.gagandata.find({active:"true"}).pretty().skip(2)
+
+// // gagan> db.gagandata.find({active:"true"}).pretty().limit(1).skip(1)
+// // [
+// //   {
+// //     _id: ObjectId("641b26158224fbb42ab75558"),
+// //     name: 'Roma',
+// //     type: 'Back End',
+// //     active: 'true',
+// //     resource: 'active'
+// //   }
+// // ]
+// // gagan>
+
+// /////////////////Update///////////
+// // db.collection_name.updateOne(filter,update) use $set operator it will replace with the field value 
+// ////////////////Delete///////////
+// // db.collection_name.deleteMany(deletion criteria)
+
+// const mongoose = require('mongoose');
+
+// ///////database creation in two lines
+// mongoose.connect("mongodb://127.0.0.1:27017/gagantt")
+// .then(()=>console.log("connection is successful...."))
+// .catch((err)=>console.log(err));
+//   /////while defining schema we make insatance so first letter of bariable is small
+
+// //   defining the structure of the document  
+// const playlistSchema=new mongoose.Schema({
+//     name:{
+//         type:String,
+//     required:true
+// },
+//     ctype:String,
+//     videos:Number,
+//     author:String,
+//     active:Boolean,
+//     date:{
+//         type:Date,
+//         default:Date.now
+//     }
+// })
+// //////////while defining model we us capital letter as it is class 
+// ////model is interfacing to database foe creating ,updating records  and collection should always be in singular form
+// ///it will automatically make plural///  PascelCase convention
+
+// ///creating the collections
+// const Playlist=new mongoose.model("Playlist",playlistSchema)
+
+// ////////creating or insert the docs
+// const nodePlaylist= Playlist({
+//     name:"Node JS",
+//     ctype:"Back End ",
+//     videos:80,
+//     author:"gagan",
+//     active:true
+// })
+// const jsPlaylist= Playlist({
+//     name:"javascript",
+//     ctype:"Front End ",
+//     videos:150,
+//     author:"gagan",
+//     active:true
+// })
+// const mongodbPlaylist=Playlist({
+//     name:"mongodb",
+//     ctype:"Back End ",
+//     videos:8,
+//     author:"gagan",
+//     active:true
+// })
+// const mongoosePlaylist= Playlist({
+//     name:"mongoose",
+//     ctype:"Back End ",
+//     videos:4,
+//     author:"gagan",
+//     active:true
+// })
+// const angularPlaylist= Playlist({
+//     name:"angular",
+//     ctype:"Back End ",
+//     videos:40,
+//     author:"gagan",
+//     active:true
+// })
+// // Playlist.save();
+// // const result=Playlist.insertMany([jsPlaylist,mongodbPlaylist,mongoosePlaylist,angularPlaylist]);
+// // console.log(result);
+
+// ////finding the docs
+
+// const result=(()=>{
+//     Playlist.find()
+
+// })
+// result() ;   
+// // console.log(result);
+
+// const getdocument=async ()=>{
+//     const result=await Playlist
+//     // .find({ctype:{$nin:["Back End ","Front End "]}})
+//     .find({$and:[{ctype:"Back End "},{author:"gagan"}]})
+//     // .find({$or:[{ctype:"Back End "},{author:"gagan"}]})
+//     console.log(result);
+// }
+
+// getdocument();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

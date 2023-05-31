@@ -4,6 +4,8 @@
 ////////////////////////
 // var t=0;
 
+console.log(5=='5')
+it checks only value but === checks datatype so this gives false
 //  do
 // ... {t++;
 // ... console.log(`the value of t is ${t}`)

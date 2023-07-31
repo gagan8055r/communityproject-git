@@ -1,6 +1,7 @@
 
 const fs = require('fs').promises
 const { rejects } = require('assert');
+const { promises } = require('dns');
 const { resolve } = require('path');
 const superagent = require('superagent');
 
@@ -54,20 +55,33 @@ try
 {
     
     const data= await fs.readFile('text.txt',(err,data1)=>{
-        // console.log(data1);
+      
     })
     console.log(`Breed:${data}`);
     
-    const res=await superagent.get(`https://dog.ceo/api/breed/${data}/images/random`)
-    console.log(res.body);
+    const res1=await superagent.get(`https://dog.ceo/api/breed/${data}/images/random`)
+    // console.log(res1.body);
+    const res2=await superagent.get(`https://dog.ceo/api/breed/${data}/images/random`)
+    // console.log(res2.body);
+    const res3=await superagent.get(`https://dog.ceo/api/breed/${data}/images/random`)
+    // console.log(res3.body);
+
+    const all=await Promise.all([res1,res2,res3])
+    const imgs=all.map(el=>el.body
+        
+    )
+   console.log(imgs);
     // console.log(res.body.message);
     
-    await fs.writeFile('dog.txt',res.body.message)
+    await fs.writeFile('dog.txt',imgs.join())
     console.log("successfully updated");
+
+    return console.log("ready function");
 
 }
 catch(err)
 {
+    console.log("there is an error");
     console.log(err);
 }
 
@@ -76,5 +90,27 @@ catch(err)
 }
 
 
-getDogpic()
+(async ()=>{
+    try{
+    console.log('at first');
+   const x= await getDogpic()
+    console.log("at second");
+    }
+    catch(err)
+    {
+        console.log("there is an error");
+        console.log(err);
+    }
+})()
+// console.log("before");
+// const x=getDogpic().then( x=>{
+
+//     console.log(x);
+// })                      ..promises work like this it will perform all the activities below that inside of stopping 
+// .catch(err=>{
+//     console.log("error occured");
+// })
+
+//                          //This line says that async function automatically returns 
+// console.log("after");
 

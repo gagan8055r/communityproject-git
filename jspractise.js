@@ -209,10 +209,22 @@
 //             })
 // console.log(num);
 
-let places="mysore,bdvt,bangalore,bang"
+// let places="mysore,bdvt,bangalore,bang"
 // console.log(places.slice(0,1));
 // let res=places.slice(7,-4)
 // let res=places.search("bdvt")
 // let res=places.substring(0,5)
 // let res=places.replace("mysore","bangalore")           it will returns a new string//////
-console.log(res);
+// console.log(places.charAt(8));
+// console.log(places.charCodeAt(places.length-1));
+// console.log(places.toLowerCase());
+// console.log(places.toUpperCase())
+
+////////////////DATES AND TIMES   IN JS//////////////////
+
+// const date= new Date()
+// console.log(date.toDateString());
+// console.log(date.toLocaleString());
+// console.log(date.toString());
+// console.log(date.toLocaleTimeString());
+// console.log(new Date(2023,7,2,12,30,24,45));

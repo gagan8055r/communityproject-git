@@ -132,6 +132,7 @@ app.use(express.json());
 
 // let tours = []; // Initialize an empty array as a placeholder for tours data
 
+
 // try {
 //     const toursData = fs.readFileSync(toursFilePath, 'utf-8');
 //     tours = JSON.parse(toursData);
@@ -149,6 +150,30 @@ app.get("/api/v1/tours", (req, res) => {
             tours: tours
         }
     });
+});
+app.get("/api/v1/tours/:id", (req, res) => {                                    ////////////if we give question mark we can default them
+
+    const id=Number(req.params.id)
+   if(id>tours.length)
+   {
+    return  res.status(404).json(
+        {
+            status:"fail",
+            message:"please enter the valid id"
+        }
+    );
+   }
+ 
+    const tour=tours.find(ele=>ele.id===id)
+ 
+    res.status(200).json(
+        {
+            status:"success",
+            data:{
+                tour
+            }
+        }
+    );
 });
 
 app.post("/api/v1/tours", (req, res) => {

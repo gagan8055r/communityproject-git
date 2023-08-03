@@ -228,3 +228,41 @@
 // console.log(date.toString());
 // console.log(date.toLocaleTimeString());
 // console.log(new Date(2023,7,2,12,30,24,45));
+
+//////////////////BOM//////////////
+
+// child nodes give number of children including space,enter
+// children gives number of contents in body tag
+
+
+
+// const arr=["dfghj","sdfghj",'fghdfgh']
+
+// const [query,name]=arr
+// console.log(name);
+
+// const c=price.filter((ele,ind,arr)=>{
+    //     return ele<100
+    // })
+    
+    
+    // const c=price.reduce((acc,ele,ind,arr)=>{
+        //     return acc+=ele
+        // },10)
+        
+        // const c=price.map((ele)=>{
+            //     return ele*2
+            // })
+            // .filter((ele)=>{
+                //     return ele>200
+                // }).reduce((acc,ele)=>{
+                    //     return acc+=ele
+                    // })
+                    
+                    var price=[122,56,7,88,89,345]
+                    // const c=price.splice(2,1,456)
+                    // const c=price.indexOf(56,3)
+                    const c=price.lastIndexOf(56,3)
+                    console.log(c);
+                    // console.log(price);
+                    // document.addEventListener

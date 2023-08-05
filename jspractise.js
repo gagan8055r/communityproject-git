@@ -259,10 +259,57 @@
                     //     return acc+=ele
                     // })
                     
-                    var price=[122,56,7,88,89,345]
-                    // const c=price.splice(2,1,456)
-                    // const c=price.indexOf(56,3)
-                    const c=price.lastIndexOf(56,3)
-                    console.log(c);
+                    // var price=[122,56,7,88,89,345]
+                    // // const c=price.splice(2,1,456)
+                    // // const c=price.indexOf(56,3)
+                    // const c=price.lastIndexOf(56,3)
+                    // console.log(c);
                     // console.log(price);
                     // document.addEventListener
+
+
+                    // const obj={
+
+                    //     myName:"gagan",
+                    //     myAge:24,
+                    //     getDate()
+                    //     {
+                    //         console.log(this.myAge);
+                    //     }
+                    // }
+                    // const obj={
+
+                    //     myName:"gagan",
+                    //     myAge:24,
+                    //     getDate:()=>
+                    //     {
+                    //         console.log(this);
+                    //     }
+                    // }
+
+                    // obj.getDate()
+
+                    // const arr=['sdfg','sdfghj','dfghjkl','rtyui']
+
+                    //      ///////////////////array destructuring we use square brackets to get the data
+                    // const[first,second,third]=arr
+
+                    // console.log(first);
+                    // console.log(second);
+                    // console.log(third);
+
+
+    //                 const obg={
+
+    //                     name1:"dfghj",
+    //                     age:21,
+    //                     gender:'male',
+    //                 }
+
+    //                 const{name1,age,gender}=obg
+    //  ///////in object destrucing we use curly brakets
+    //                 console.log(name1);
+    //                 console.log(age);
+    //                 console.log(gender);
+
+    

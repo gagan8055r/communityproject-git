@@ -1,5 +1,4 @@
-// import logo from './logo.svg';
-// import './App.css';
+
 // import Statewise from './components/statewisedata/statewise';
 import React from "react";
 import { increment,decrement } from "./actions";

@@ -5,7 +5,7 @@ import { increment,decrement } from "./actions";
 import { useSelector,useDispatch } from "react-redux";
 
 function App() {
-  // use selector takes function as an arguement
+
   const myState=useSelector((state)=> state.numberChange)
   const dispatch=useDispatch()
   return (
